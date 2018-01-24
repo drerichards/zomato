@@ -1,0 +1,9 @@
+.ResultsList {
+    display: flex;
+    justify-content: space-around;
+    text-align: initial;
+}
+
+.ResultsList .list_item{
+    cursor: pointer;
+}

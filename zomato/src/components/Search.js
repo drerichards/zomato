@@ -1,20 +1,32 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import '../css/Search.css'
 
 class Search extends Component {
     onInputChange(e) {
-        console.log(e.target.value)
+        this.props.getSearchValue(e.target.value)
+    }
+
+    onSearchClick(){
+        this.props.initiateSearch()
     }
     
     render() {
         return (
-            <div>
+            <div className='Search'>
                 <h2>Zomato</h2>
                 <form>
-                    <input type="search" name="" id="" onChange={e => {this.onInputChange(e)}}/>
-                    <input type="button" value="Search" />
+                    <input type='text' value={this.props.searchValue} className='searchValue' onChange={e => {this.onInputChange(e)}}/>
+                    <input type='button' value='Search' className='searchButton' onClick={() => {this.onSearchClick()}}/>
                 </form>
             </div>
         )
     }
+}
+
+Search.propTypes = {
+    searchValue: PropTypes.string.isRequired,
+    getSearchValue: PropTypes.func.isRequired,
+    initiateSearch: PropTypes.func.isRequired
 }
 export default Search
