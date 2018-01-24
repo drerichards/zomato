@@ -1,29 +1,24 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Home from './components/Home' 
-import List from './components/List' 
-import Detail from './components/Detail' 
+import Search from './components/Search'
+import ResultsList from './components/ResultsList'
 import './App.css'
+import './css/App.css'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <Router>
-          <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/list">List</Link></li>
-              <li><Link to="/detail">Detail</Link></li>
-            </ul>
-
-            <hr />
-
-            <Route exact path="/" component={Home} />
-            <Route path="/list" component={List} />
-            <Route path="/detail" component={Detail} />
-          </div>
-        </Router>
+      <div className='App'>
+        <Search />
+        <div>
+          <ResultsList />
+        </div>
       </div>
     )
   }
