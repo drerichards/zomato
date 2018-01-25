@@ -20,8 +20,15 @@ class App extends Component {
     this.setState({ searchValue: value })
   }
 
-  initiateSearch = () => {
-    fetch('https://developers.zomato.com/api/v2.1/search', {
+  initiateSearch = entity_id => {
+    let { searchValue } = this.state
+    let fetchUrl = `https://developers.zomato.com/api/v2.1/search?entity_id=${entity_id}&entity_type=city`
+    searchValue = searchValue.trim()
+    if (searchValue.length > 0){
+      searchValue = searchValue.replace(/ /g, "%20")
+       fetchUrl = `${fetchUrl}&q=${searchValue}` 
+    }
+    fetch(fetchUrl, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
