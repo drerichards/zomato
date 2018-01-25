@@ -2,8 +2,44 @@
     display: flex;
     justify-content: space-around;
     text-align: initial;
+    flex: 1 1 85%;
 }
 
-.ResultsList .list_item{
+.ResultsList>div {
+    margin: 1% 3%;
+}
+
+.ResultsList .results {
+    flex: 2 2 55%;
+}
+
+.ResultsList .results span {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.ResultsList .list_item {
     cursor: pointer;
+}
+
+.ResultsList .collapsible-header {
+    background-color: #247BA0;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.ResultsList .collapsible.popout {
+    overflow: auto;
+    height: 60vh;
+}
+
+.ResultsList .collapsible-body {
+    position: relative;
+}
+
+.ResultsList .btn {
+    position: absolute;
+    right: 3%;
+    bottom: 10%;
 }

@@ -1,0 +1,17 @@
+.Sidebar {
+    flex: 2 2 15%;
+    padding: 0 1%;
+}
+
+.Sidebar form {
+    padding: 10% 5%;
+}
+
+.Sidebar form p {
+    border-bottom: 0.5px solid rgba(238, 238, 238, 0.842);
+}
+
+.Sidebar [type="checkbox"]:checked+label:before {
+    border-right: 2px solid #F25F5C;
+    border-bottom: 2px solid #F25F5C;
+}

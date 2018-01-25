@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Search from './components/Search'
+import Sidebar from './components/Sidebar'
 import ResultsList from './components/ResultsList'
 import { USER_KEY } from './config'
 import './App.css'
@@ -31,12 +32,20 @@ class App extends Component {
       .then(parsedJSON => parsedJSON.restaurants.map(restaurant => (
         {
           name: restaurant.restaurant.name,
-          cuisines: restaurant.restaurant.cuisines,
           address: restaurant.restaurant.location.address,
+          city: restaurant.restaurant.location.city,
           locale: restaurant.restaurant.location.locality_verbose,
+          cuisines: restaurant.restaurant.cuisines,
           rating_num: restaurant.restaurant.user_rating.aggregate_rating,
           rating_text: restaurant.restaurant.user_rating.rating_text,
-          url: restaurant.restaurant.url 
+          votes: restaurant.restaurant.user_rating.votes,
+          latitude: restaurant.restaurant.latitude,
+          longitude: restaurant.restaurant.longitude,
+          dollars: restaurant.restaurant.price_range,
+          avg_cost_two: restaurant.restaurant.average_cost_for_two,
+          reservation: restaurant.restaurant.has_table_booking,
+          online_deliv: restaurant.restaurant.has_online_delivery,
+          url: restaurant.restaurant.url
         }
       )))
       .then(data => this.setState({ restaurants: data }))
@@ -44,16 +53,19 @@ class App extends Component {
     this.setState({ searchValue: '' })
   }
 
-showRestDetail = index => {
-  const {restaurants, selectedRestaurant} = this.state
-  this.setState({ selectedRestaurant: restaurants[index]})
-}
+  showRestDetail = index => {
+    const { restaurants } = this.state
+    this.setState({ selectedRestaurant: restaurants[index] })
+  }
 
   render() {
     return (
-      <div className='App'>
+      <div className='App card'>
         <Search searchValue={this.state.searchValue} getSearchValue={this.getSearchValue} initiateSearch={this.initiateSearch} />
-        <ResultsList restaurants={this.state.restaurants} selectedRestaurant={this.state.selectedRestaurant} showRestDetail={this.showRestDetail}/>
+        <div className='SideAndResults'>
+          <Sidebar />
+          <ResultsList restaurants={this.state.restaurants} selectedRestaurant={this.state.selectedRestaurant} showRestDetail={this.showRestDetail} />
+        </div>
       </div>
     )
   }
