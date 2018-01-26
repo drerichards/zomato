@@ -19,20 +19,20 @@ const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_
                 </div>
                 <div className="card-tabs">
                     <ul className="tabs tabs-fixed-width">
-                        <li className="tab"><a href="#location">Location</a></li>
                         <li className="tab"><a href="#ratings" className='active'>Ratings</a></li>
+                        <li className="tab"><a href="#location">Location</a></li>
                         <li className="tab"><a href="#info">Info</a></li>
                     </ul>
                 </div>
                 <div className="card-content card-bottom">
-                    <div id="location">
-                        <p>Address: <span>{address}</span></p>
-                        <p>City: <span>{city}</span></p>
-                    </div>
                     <div id="ratings">
                         <p>Rating: <span>{rating_text}</span></p>
                         <p>Score: <span>{rating_num} out of 5</span></p>
                         <p>Votes: <span>{votes}</span></p>
+                    </div>
+                    <div id="location">
+                        <p>Address: <span>{address}</span></p>
+                        <p>City: <span>{city}</span></p>
                     </div>
                     <div id="info">
                         <p>Cuisines: <span>{cuisines}</span></p>

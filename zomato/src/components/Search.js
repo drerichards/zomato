@@ -37,6 +37,13 @@ class Search extends Component {
                 entity_id = 280
                 break
         }
+        let checkedElems = document.querySelectorAll('.checked')
+        checkedElems = Array.from(checkedElems)
+        let idArr = []
+        idArr = checkedElems.map((item, i) => {
+            return item.id
+        })
+        this.props.addCuisineToArr(idArr)
         this.props.initiateSearch(entity_id)
     }
 
@@ -67,6 +74,7 @@ class Search extends Component {
 Search.propTypes = {
     searchValue: PropTypes.string.isRequired,
     getSearchValue: PropTypes.func.isRequired,
+    addCuisineToArr: PropTypes.func.isRequired,
     initiateSearch: PropTypes.func.isRequired
 }
 export default Search

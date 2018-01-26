@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       restaurants: [],
       selectedRestaurant: null,
-      searchValue: ''
+      searchValue: '',
+      cuisineArr: []
     }
   }
 
@@ -20,14 +21,32 @@ class App extends Component {
     this.setState({ searchValue: value })
   }
 
+  addCuisineToArr = idArr => {
+    idArr.map(elem => {
+      return this.setState({ cuisineArr: this.state.cuisineArr.push(elem) })
+    })
+  }
+
   initiateSearch = entity_id => {
-    let { searchValue } = this.state
+    let { searchValue, cuisineArr } = this.state
     let fetchUrl = `https://developers.zomato.com/api/v2.1/search?entity_id=${entity_id}&entity_type=city`
     searchValue = searchValue.trim()
-    if (searchValue.length > 0){
+    if (searchValue.length > 0) {
       searchValue = searchValue.replace(/ /g, "%20")
-       fetchUrl = `${fetchUrl}&q=${searchValue}` 
+      fetchUrl = `${fetchUrl}&q=${searchValue}`
     }
+
+    if (cuisineArr.length > 0) {
+      let cuisineParams
+      if (cuisineArr.length > 1) {
+        cuisineParams = cuisineArr.join('%2C%20')
+        fetchUrl = `${fetchUrl}&cuisines=${cuisineParams}`
+      } else if (cuisineArr.length === 1){
+        cuisineParams = cuisineArr
+        fetchUrl = `${fetchUrl}&cuisines=${cuisineParams}`
+      }
+    }
+
     fetch(fetchUrl, {
       method: 'GET',
       headers: {
@@ -57,7 +76,7 @@ class App extends Component {
       )))
       .then(data => this.setState({ restaurants: data }))
       .catch(err => console.log(err))
-    this.setState({ searchValue: '' })
+    this.setState({ searchValue: '', cuisineArr: [] })
   }
 
   showRestDetail = index => {
@@ -68,9 +87,9 @@ class App extends Component {
   render() {
     return (
       <div className='App card'>
-        <Search searchValue={this.state.searchValue} getSearchValue={this.getSearchValue} initiateSearch={this.initiateSearch} />
+        <Search searchValue={this.state.searchValue} getSearchValue={this.getSearchValue} addCuisineToArr={this.addCuisineToArr} initiateSearch={this.initiateSearch} />
         <div className='SideAndResults'>
-          <Sidebar />
+          <Sidebar cuisineArr={this.state.cuisineArr} />
           <ResultsList restaurants={this.state.restaurants} selectedRestaurant={this.state.selectedRestaurant} showRestDetail={this.showRestDetail} />
         </div>
       </div>
