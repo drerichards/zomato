@@ -7,6 +7,8 @@ import '../css/ResultsList.css'
 class ResultsList extends Component {
     onListItemClick(index) {
         this.props.showRestDetail(index)
+        let id = this.props.restaurants[index].resta_id
+        this.props.initiateReviewFetch(id)
     }
 
     renderList() {
@@ -36,7 +38,8 @@ class ResultsList extends Component {
                     </section>
                 </div>
                 {this.props.selectedRestaurant !== null ?
-                    <Detail name={this.props.selectedRestaurant.name}
+                    <Detail resta_id={this.props.selectedRestaurant.resta_id}
+                        name={this.props.selectedRestaurant.name}
                         address={this.props.selectedRestaurant.address}
                         city={this.props.selectedRestaurant.city}
                         cuisines={this.props.selectedRestaurant.cuisines}
@@ -49,7 +52,8 @@ class ResultsList extends Component {
                         avg_cost_two={this.props.selectedRestaurant.avg_cost_two}
                         reservation={this.props.selectedRestaurant.reservation}
                         online_deliv={this.props.selectedRestaurant.online_deliv}
-                        url={this.props.selectedRestaurant.url} /> : <Detail />}
+                        url={this.props.selectedRestaurant.url}
+                        reviews={this.props.reviews} /> : <Detail />}
 
             </div>
         )
@@ -59,6 +63,7 @@ class ResultsList extends Component {
 ResultsList.propTypes = {
     restaurants: PropTypes.array,
     selectedRestaurant: PropTypes.object,
-    showRestDetail: PropTypes.func.isRequired
+    showRestDetail: PropTypes.func.isRequired,
+    initiateReviewFetch: PropTypes.func
 }
 export default ResultsList

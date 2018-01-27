@@ -2,12 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../css/Detail.css'
 
-const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_cost_two, reservation, online_deliv, cuisines, rating_num, rating_text, url }) => {
+const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_cost_two, reservation, online_deliv, cuisines, rating_num, rating_text, url, reviews }) => {
     function dollarSign() {
         const dollarDiv = document.getElementById('dollar')
         for (let i = 0; i < dollars; i++) {
             dollarDiv.innerHTML += '$'
         }
+    }
+
+    function renderReviews() {
+        console.log(reviews)
+        return reviews.map(function (review, i) {
+            return <div key={i} className='card'>
+                <div className="card-content white-text">
+                    <span className="card-title">''{review.rating_title}''</span>
+                    <p>{review.review_text}</p>
+                    <p>- {review.user}</p>
+                    <div className="card-action">
+                        <p>Rating: {review.rating}</p>
+                        <p>{review.review_time}</p>
+                    </div>
+                </div>
+            </div>
+        })
     }
 
     return (
@@ -19,20 +36,16 @@ const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_
                 </div>
                 <div className="card-tabs">
                     <ul className="tabs tabs-fixed-width">
-                        <li className="tab"><a href="#ratings" className='active'>Ratings</a></li>
-                        <li className="tab"><a href="#location">Location</a></li>
+                        <li className="tab"><a href="#location" className='active'>Location</a></li>
                         <li className="tab"><a href="#info">Info</a></li>
+                        <li className="tab"><a href="#reviews">Reviews</a></li>
                     </ul>
                 </div>
                 <div className="card-content card-bottom">
-                    <div id="ratings">
-                        <p>Rating: <span>{rating_text}</span></p>
-                        <p>Score: <span>{rating_num} out of 5</span></p>
-                        <p>Votes: <span>{votes}</span></p>
-                    </div>
                     <div id="location">
                         <p>Address: <span>{address}</span></p>
                         <p>City: <span>{city}</span></p>
+                        <div id="googleMap"></div>
                     </div>
                     <div id="info">
                         <p>Cuisines: <span>{cuisines}</span></p>
@@ -41,6 +54,18 @@ const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_
                         <p>Table Reservation: <span>{reservation === 0 ? 'No' : 'Yes'}</span></p>
                         <p>Online Delivery: <span>{online_deliv === 0 ? 'No' : 'Yes'}</span></p>
                         <p>Visit Website: <a href={url} target="_blank">{name}</a> </p>
+                    </div>
+                    <div id="reviews">
+                        <p>Rating: <span>{rating_text}</span></p>
+                        <p>Score: <span>{rating_num} out of 5</span></p>
+                        <p>Votes: <span>{votes}</span></p>
+                        <hr />
+                        <section className="reviewDiv">
+                            <h5>{reviews ? reviews.length : 'No'} Reviews:</h5>
+                            <div className="reviewScroll">
+                                {reviews ? renderReviews() : ''}
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
@@ -62,6 +87,7 @@ Detail.propTypes = {
     avg_cost_two: PropTypes.number,
     reservation: PropTypes.number,
     online_deliv: PropTypes.number,
-    url: PropTypes.string
+    url: PropTypes.string,
+    reviews: PropTypes.array
 }
 export default Detail
