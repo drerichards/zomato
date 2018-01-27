@@ -6,6 +6,8 @@
 
 .Detail .card {
     padding: 2%;
+    overflow: auto;
+    max-height: 100%;
 }
 
 .Detail .hide {
@@ -25,6 +27,8 @@
 
 .Detail .card-bottom {
     background-color: #eabf53;
+    max-height: 35em;
+    overflow: auto;
 }
 
 .Detail .card .card-content p {
@@ -52,7 +56,7 @@
     padding: 2% 2% 0;
 }
 
-.Detail .reviewDiv .reviewScroll{
+.Detail .reviewDiv .reviewScroll {
     overflow: auto;
 }
 

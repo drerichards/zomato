@@ -26,8 +26,8 @@ class ResultsList extends Component {
 
     render() {
         return (
-            <div className='ResultsList'>
-                <div className='results'>
+            <div className='ResultsList card'>
+                <div className='results card'>
                     <span>
                         <h3>Results</h3>
                         <h5>{this.props.restaurants.length} Restaurants</h5>
@@ -54,7 +54,6 @@ class ResultsList extends Component {
                         online_deliv={this.props.selectedRestaurant.online_deliv}
                         url={this.props.selectedRestaurant.url}
                         reviews={this.props.reviews} /> : <Detail />}
-
             </div>
         )
     }

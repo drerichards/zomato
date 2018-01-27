@@ -3,7 +3,6 @@ import Search from './components/Search'
 import Sidebar from './components/Sidebar'
 import ResultsList from './components/ResultsList'
 import { USER_KEY } from './config'
-import './App.css'
 import './css/App.css'
 
 class App extends Component {

@@ -2,16 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../css/Detail.css'
 
-const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_cost_two, reservation, online_deliv, cuisines, rating_num, rating_text, url, reviews }) => {
+const Detail = ({ name, address, city, votes, dollars, avg_cost_two, reservation, online_deliv, cuisines, rating_num, rating_text, url, reviews }) => {
     function dollarSign() {
-        const dollarDiv = document.getElementById('dollar')
+        let dollarDiv = document.getElementById('dollar')
+        dollarDiv.innerHTML = ''
+        let elem = document.createElement('div')
+        elem.setAttribute('style', 'display: inline-block;')
+        dollarDiv.appendChild(elem)
         for (let i = 0; i < dollars; i++) {
-            dollarDiv.innerHTML += '$'
+            elem.innerHTML += '$'
         }
     }
 
     function renderReviews() {
-        console.log(reviews)
         return reviews.map(function (review, i) {
             return <div key={i} className='card'>
                 <div className="card-content white-text">
@@ -45,11 +48,10 @@ const Detail = ({ name, address, city, votes, latitude, longitude, dollars, avg_
                     <div id="location">
                         <p>Address: <span>{address}</span></p>
                         <p>City: <span>{city}</span></p>
-                        <div id="googleMap"></div>
                     </div>
                     <div id="info">
                         <p>Cuisines: <span>{cuisines}</span></p>
-                        <p>Price Range: <span id='dollar'>{dollarSign()}</span></p>
+                        <p>Price Range: <span id='dollar'>{dollars ? dollarSign() : ''}</span></p>
                         <p>Average cost for two diners: <span>${avg_cost_two}</span></p>
                         <p>Table Reservation: <span>{reservation === 0 ? 'No' : 'Yes'}</span></p>
                         <p>Online Delivery: <span>{online_deliv === 0 ? 'No' : 'Yes'}</span></p>
