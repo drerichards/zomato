@@ -1,0 +1,443 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot test 1`] = `
+<div
+  className="App card"
+>
+  <div
+    className="Search"
+  >
+    <h2>
+      Zomato
+    </h2>
+    <form>
+      <div
+        className="row"
+      >
+        <div
+          className="col input-field s12"
+        >
+          <label
+            className="active"
+            data-error={undefined}
+            data-success={undefined}
+            htmlFor="citySelector"
+          >
+            City Select
+          </label>
+          <select
+            checked={false}
+            className=""
+            defaultValue="5"
+            id="citySelector"
+            multiple={undefined}
+          >
+            <option
+              value="1"
+            >
+              Chicago
+            </option>
+            <option
+              value="2"
+            >
+              Houston
+            </option>
+            <option
+              value="3"
+            >
+              Los Angeles
+            </option>
+            <option
+              value="4"
+            >
+              Miami
+            </option>
+            <option
+              value="5"
+            >
+              New York City
+            </option>
+            <option
+              value="6"
+            >
+              Philadelphia
+            </option>
+            <option
+              value="7"
+            >
+              Washington D.C.
+            </option>
+          </select>
+        </div>
+      </div>
+      <input
+        className="searchValue"
+        onChange={[Function]}
+        placeholder="Enter a keyword or leave blank"
+        type="text"
+        value=""
+      />
+      <input
+        className="searchButton waves-light btn"
+        onClick={[Function]}
+        type="button"
+        value="Search"
+      />
+    </form>
+  </div>
+  <div
+    className="SideAndResults"
+  >
+    <div
+      className="Sidebar"
+    >
+      <form
+        action="#"
+        className="card"
+      >
+        <p>
+          <input
+            id="1"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="1"
+          >
+            American
+          </label>
+        </p>
+        <p>
+          <input
+            id="152"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="152"
+          >
+            African
+          </label>
+        </p>
+        <p>
+          <input
+            id="3"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="3"
+          >
+            Asian
+          </label>
+        </p>
+        <p>
+          <input
+            id="193"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="193"
+          >
+            BBQ
+          </label>
+        </p>
+        <p>
+          <input
+            id="158"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="158"
+          >
+            Caribbean
+          </label>
+        </p>
+        <p>
+          <input
+            id="40"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="40"
+          >
+            Fast Food
+          </label>
+        </p>
+        <p>
+          <input
+            id="143"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="143"
+          >
+            Healthy Food
+          </label>
+        </p>
+        <p>
+          <input
+            id="148"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="148"
+          >
+            Indian
+          </label>
+        </p>
+        <p>
+          <input
+            id="55"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="55"
+          >
+            Italian
+          </label>
+        </p>
+        <p>
+          <input
+            id="136"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="136"
+          >
+            Latin American
+          </label>
+        </p>
+        <p>
+          <input
+            id="137"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="137"
+          >
+            Middle Eastern
+          </label>
+        </p>
+        <p>
+          <input
+            id="83"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="83"
+          >
+            Seafood
+          </label>
+        </p>
+        <p>
+          <input
+            id="461"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="461"
+          >
+            Soul Food
+          </label>
+        </p>
+        <p>
+          <input
+            id="95"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="95"
+          >
+            Thai
+          </label>
+        </p>
+        <p>
+          <input
+            id="308"
+            onClick={[Function]}
+            type="checkbox"
+          />
+          <label
+            htmlFor="308"
+          >
+            Vegetarian
+          </label>
+        </p>
+      </form>
+    </div>
+    <div
+      className="ResultsList card"
+    >
+      <div
+        className="results card"
+      >
+        <span>
+          <h3>
+            Results
+          </h3>
+          <h5>
+            0
+             Restaurants
+          </h5>
+        </span>
+        <hr />
+        <section>
+          No Results
+        </section>
+      </div>
+      <div
+        className="Detail"
+      >
+        <div
+          className="card hide"
+        >
+          <div
+            className="card-content"
+          >
+            <h4 />
+            <hr />
+          </div>
+          <div
+            className="card-tabs"
+          >
+            <ul
+              className="tabs tabs-fixed-width"
+            >
+              <li
+                className="tab"
+              >
+                <a
+                  className="active"
+                  href="#location"
+                >
+                  Location
+                </a>
+              </li>
+              <li
+                className="tab"
+              >
+                <a
+                  href="#info"
+                >
+                  Info
+                </a>
+              </li>
+              <li
+                className="tab"
+              >
+                <a
+                  href="#reviews"
+                >
+                  Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="card-content card-bottom"
+          >
+            <div
+              id="location"
+            >
+              <p>
+                Address: 
+                <span />
+              </p>
+              <p>
+                City: 
+                <span />
+              </p>
+            </div>
+            <div
+              id="info"
+            >
+              <p>
+                Cuisines: 
+                <span />
+              </p>
+              <p>
+                Price Range: 
+                <span
+                  id="dollar"
+                >
+                  
+                </span>
+              </p>
+              <p>
+                Average cost for two diners: 
+                <span>
+                  $
+                </span>
+              </p>
+              <p>
+                Table Reservation: 
+                <span>
+                  Yes
+                </span>
+              </p>
+              <p>
+                Online Delivery: 
+                <span>
+                  Yes
+                </span>
+              </p>
+              <p>
+                Visit Website: 
+                <a
+                  href={undefined}
+                  target="_blank"
+                />
+                 
+              </p>
+            </div>
+            <div
+              id="reviews"
+            >
+              <p>
+                Rating: 
+                <span />
+              </p>
+              <p>
+                Score: 
+                <span>
+                   out of 5
+                </span>
+              </p>
+              <p>
+                Votes: 
+                <span />
+              </p>
+              <hr />
+              <section
+                className="reviewDiv"
+              >
+                <h5>
+                  No
+                   Reviews:
+                </h5>
+                <div
+                  className="reviewScroll"
+                >
+                  
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search snapshot test 1`] = `
+<div
+  className="Search"
+>
+  <h2>
+    Zomato
+  </h2>
+  <form>
+    <div
+      className="row"
+    >
+      <div
+        className="col input-field s12"
+      >
+        <label
+          className="active"
+          data-error={undefined}
+          data-success={undefined}
+          htmlFor="citySelector"
+        >
+          City Select
+        </label>
+        <select
+          checked={false}
+          className=""
+          defaultValue="5"
+          id="citySelector"
+          multiple={undefined}
+        >
+          <option
+            value="1"
+          >
+            Chicago
+          </option>
+          <option
+            value="2"
+          >
+            Houston
+          </option>
+          <option
+            value="3"
+          >
+            Los Angeles
+          </option>
+          <option
+            value="4"
+          >
+            Miami
+          </option>
+          <option
+            value="5"
+          >
+            New York City
+          </option>
+          <option
+            value="6"
+          >
+            Philadelphia
+          </option>
+          <option
+            value="7"
+          >
+            Washington D.C.
+          </option>
+        </select>
+      </div>
+    </div>
+    <input
+      className="searchValue"
+      onChange={[Function]}
+      placeholder="Enter a keyword or leave blank"
+      type="text"
+      value={undefined}
+    />
+    <input
+      className="searchButton waves-light btn"
+      onClick={[Function]}
+      type="button"
+      value="Search"
+    />
+  </form>
+</div>
+`;

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail snapshot test 1`] = `
+<div
+  className="Detail"
+>
+  <div
+    className="card hide"
+  >
+    <div
+      className="card-content"
+    >
+      <h4 />
+      <hr />
+    </div>
+    <div
+      className="card-tabs"
+    >
+      <ul
+        className="tabs tabs-fixed-width"
+      >
+        <li
+          className="tab"
+        >
+          <a
+            className="active"
+            href="#location"
+          >
+            Location
+          </a>
+        </li>
+        <li
+          className="tab"
+        >
+          <a
+            href="#info"
+          >
+            Info
+          </a>
+        </li>
+        <li
+          className="tab"
+        >
+          <a
+            href="#reviews"
+          >
+            Reviews
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="card-content card-bottom"
+    >
+      <div
+        id="location"
+      >
+        <p>
+          Address: 
+          <span />
+        </p>
+        <p>
+          City: 
+          <span />
+        </p>
+      </div>
+      <div
+        id="info"
+      >
+        <p>
+          Cuisines: 
+          <span />
+        </p>
+        <p>
+          Price Range: 
+          <span
+            id="dollar"
+          >
+            
+          </span>
+        </p>
+        <p>
+          Average cost for two diners: 
+          <span>
+            $
+          </span>
+        </p>
+        <p>
+          Table Reservation: 
+          <span>
+            Yes
+          </span>
+        </p>
+        <p>
+          Online Delivery: 
+          <span>
+            Yes
+          </span>
+        </p>
+        <p>
+          Visit Website: 
+          <a
+            href={undefined}
+            target="_blank"
+          />
+           
+        </p>
+      </div>
+      <div
+        id="reviews"
+      >
+        <p>
+          Rating: 
+          <span />
+        </p>
+        <p>
+          Score: 
+          <span>
+             out of 5
+          </span>
+        </p>
+        <p>
+          Votes: 
+          <span />
+        </p>
+        <hr />
+        <section
+          className="reviewDiv"
+        >
+          <h5>
+            No
+             Reviews:
+          </h5>
+          <div
+            className="reviewScroll"
+          >
+            
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;

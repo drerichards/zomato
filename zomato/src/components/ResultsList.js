@@ -30,11 +30,11 @@ class ResultsList extends Component {
                 <div className='results card'>
                     <span>
                         <h3>Results</h3>
-                        <h5>{this.props.restaurants.length} Restaurants</h5>
+                        {/* <h5>{this.props ? this.props.restaurants.length : '0'} Restaurants</h5> */}
                     </span>
                     <hr />
                     <section>
-                        {this.props.restaurants.length > 0 ? <Collapsible popout accordion>{this.renderList()}</Collapsible> : 'No Results'}
+                        {this.props ? this.props.restaurants.length > 0 ? <Collapsible popout accordion>{this.renderList()}</Collapsible> : 'No Results' : ''}
                     </section>
                 </div>
                 {this.props.selectedRestaurant !== null ?

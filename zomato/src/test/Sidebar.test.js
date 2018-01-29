@@ -1,10 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Search from '../components/Search'
+import Sidebar from '../components/Sidebar'
 
-test('Search snapshot test', () => {
-    const component = renderer.create(<Search />)
+test('Sidebar snapshot test', () => {
+    const component = renderer.create(<Sidebar />)
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
 })
-

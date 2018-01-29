@@ -6,7 +6,7 @@
 
 .Detail .card {
     padding: 2%;
-    overflow: auto;
+    overflow: hidden;
     max-height: 100%;
 }
 

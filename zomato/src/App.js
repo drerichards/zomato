@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Search from './components/Search'
 import Sidebar from './components/Sidebar'
 import ResultsList from './components/ResultsList'
+import ErrorBoundary from './components/ErrorBoundary'
 import { USER_KEY } from './config'
 import './css/App.css'
 
@@ -9,12 +10,11 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      restaurants: [],
-      reviews: [],
-      selectedRestaurant: null,
-      selectedRestID: null,
-      searchValue: '',
-      cuisineArr: []
+      restaurants: [],// array of restaurant data from fetch
+      reviews: [], // array of reviews from fetch
+      selectedRestaurant: null,//the restaurant whose data appears in detail comp
+      searchValue: '',//input from the input field
+      cuisineArr: [],// array of restaurant data from fetch
     }
   }
 
@@ -25,7 +25,7 @@ class App extends Component {
   addCuisineToArr = idArr => {
     idArr.map(elem => {
       return this.setState({ cuisineArr: this.state.cuisineArr.push(elem) })
-    })
+    })//an array of cuisine IDs are passed to be sent to the fetch if present
   }
 
   initiateSearch = entity_id => {
@@ -111,17 +111,20 @@ class App extends Component {
   render() {
     return (
       <div className='App card'>
-        <Search searchValue={this.state.searchValue} 
-        getSearchValue={this.getSearchValue} 
-        addCuisineToArr={this.addCuisineToArr} 
-        initiateSearch={this.initiateSearch} />
+        <ErrorBoundary hasError={this.state.hasError}>
+          <Search searchValue={this.state.searchValue}
+            getSearchValue={this.getSearchValue}
+            addCuisineToArr={this.addCuisineToArr}
+            initiateSearch={this.initiateSearch} />
+        </ErrorBoundary>
         <div className='SideAndResults'>
-          <Sidebar cuisineArr={this.state.cuisineArr} />
-          <ResultsList restaurants={this.state.restaurants} 
-          selectedRestaurant={this.state.selectedRestaurant} 
-          showRestDetail={this.showRestDetail} 
-          initiateReviewFetch={this.initiateReviewFetch} 
-          reviews={this.state.reviews}/>
+          <ErrorBoundary hasError={this.state.hasError}> <Sidebar cuisineArr={this.state.cuisineArr} /></ErrorBoundary>
+          <ErrorBoundary hasError={this.state.hasError}><ResultsList restaurants={this.state.restaurants}
+            selectedRestaurant={this.state.selectedRestaurant}
+            showRestDetail={this.showRestDetail}
+            initiateReviewFetch={this.initiateReviewFetch}
+            reviews={this.state.reviews} />
+          </ErrorBoundary>
         </div>
       </div>
     )

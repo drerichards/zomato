@@ -1,10 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Search from '../components/Search'
+import Detail from '../components/Detail'
 
-test('Search snapshot test', () => {
-    const component = renderer.create(<Search />)
+test('Detail snapshot test', () => {
+    const component = renderer.create(<Detail />)
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
 })
-
